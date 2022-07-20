@@ -1,0 +1,25 @@
+﻿<!-- Indicar el modelo que vamos a utilizar -->
+@model PracticaBrive.Models.Sucursal
+
+@{
+    ViewData["Title"] = "Detalle sucursal";
+}
+
+<h1 class="text-center">SUCURSALES</h1>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card border">
+            <div class="card-header">
+                <h3><strong>Detalle de sucursal</strong></h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Nombre: </strong>@Html.DisplayFor(m => m.Nombre)</li>
+                    <li class="list-group-item"><strong>Ciudad: </strong>@Html.DisplayFor(m => m.Ciudad)</li>
+                    <li class="list-group-item"><strong>Estado: </strong>@Html.DisplayFor(m => m.Estado)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

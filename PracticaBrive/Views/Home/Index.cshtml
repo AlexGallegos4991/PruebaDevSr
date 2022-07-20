@@ -1,0 +1,59 @@
+﻿<!-- Indicar el modelo que vamos a utilizar -->
+@model IEnumerable<PracticaBrive.Models.Compra>
+
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<h1 class="text-center">COMPRAS</h1>
+<div class="row">
+    <div class="col-12">
+        <div class="float-right">
+            <a asp-action="CrearCompra" asp-controller="Home" class="btn btn-success"><i class="bi bi-file-plus-fill"></i> Nueva Compra</a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card border">
+            <div class="card-header">
+                <h3><strong>Lista de Compras</strong></h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    @if (Model.Count() > 0)
+                    {
+                        <table class="table table-bordered" id="tbtCompra" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>@Html.DisplayNameFor(m => m.Id)</th>
+                                    <th>Nombre Cliente</th>
+                                    <th>@Html.DisplayNameFor(m => m.FechaDeCompra)</th>
+                                    <th>@Html.DisplayNameFor(m => m.idProducto)</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@Html.DisplayFor(m => item.Id)</td>
+                                        <td>@Html.DisplayFor(m => item.Nombre)</td>
+                                        <td>@Html.DisplayFor(m => item.FechaDeCompra)</td>
+                                        <td>@Html.DisplayFor(m => item.idProducto)</td>
+                                        <td>
+                                            <a class="btn btn-primary" asp-action="EditarCompra" asp-route-id="@item.Id"><i class="bi bi-pencil-fill"></i> Editar</a>
+                                            <a class="btn btn-secondary" asp-action="DetalleCompra" asp-route-id="@item.Id"><i class="bi bi-info-circle-fill"></i> Detalle</a>
+                                            <a class="btn btn-danger" asp-action="BorrarCompra" asp-route-id="@item.Id"><i class="bi bi-eraser-fill"></i> Borrar</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+﻿<!-- Indicar el modelo que vamos a utilizar -->
+@model PracticaBrive.Models.Producto
+
+@{
+    ViewData["Title"] = "Editar Producto";
+}
+
+<h1 class="text-center">PRODUCTOS</h1>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card border">
+            <div class="card-header">
+                <h3><strong>Editar Producto</strong></h3>
+            </div>
+            <div class="card-body">
+               <form asp-action="EditarProducto">
+
+                   <!--Id del usuario como campo oculto-->
+                   <input type="hidden" asp-for="CodigoDeBarras" />
+
+                   <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                   <div class="form-group">
+                       <label asp-for="Nombre" class="control-label"></label>
+                       <input asp-for="Nombre" class="form-control" placeholder="Ingrese el nombre del Producto" />
+                       <span asp-validation-for="Nombre" class="text-danger"></span>
+                   </div>
+                   <div class="form-group">
+                       <label asp-for="Cantidad" class="control-label"></label>
+                       <input asp-for="Cantidad" class="form-control" placeholder="Ingrese la cantidad del producto" />
+                       <span asp-validation-for="Cantidad" class="text-danger"></span>
+                   </div>
+                   <div class="form-group">
+                       <label asp-for="Precio" class="control-label"></label>
+                       <input asp-for="Precio" class="form-control" placeholder="Ingrese el precio del producto" />
+                       <span asp-validation-for="Precio" class="text-danger"></span>
+                   </div>
+                   <div class="form-group">
+                       <label asp-for="idSucursal" class="control-label"></label>
+                       <input asp-for="idSucursal" class="form-control" placeholder="Ingrese el id de la sucursal" />
+                       <span asp-validation-for="idSucursal" class="text-danger"></span>
+                   </div>
+                  
+                   <div class="form-group mt-3">
+                       <button type="submit" class="btn btn-success"><i class="bi bi-pencil-fill"></i> Editar Producto</button>
+                   </div>
+               </form>
+            </div>
+        </div>
+    </div>
+</div>

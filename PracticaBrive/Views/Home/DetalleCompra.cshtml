@@ -1,0 +1,25 @@
+﻿<!-- Indicar el modelo que vamos a utilizar -->
+@model PracticaBrive.Models.Compra
+
+@{
+    ViewData["Title"] = "Detalle Compra";
+}
+
+<h1 class="text-center">COMPRAS</h1>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card border">
+            <div class="card-header">
+                <h3><strong>Detalle de compra</strong></h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Nombre: </strong>@Html.DisplayFor(m => m.Nombre)</li>
+                    <li class="list-group-item"><strong>Fecha de compra: </strong>@Html.DisplayFor(m => m.FechaDeCompra)</li>
+                    <li class="list-group-item"><strong>Id de producto: </strong>@Html.DisplayFor(m => m.idProducto)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿<!-- Indicar el modelo que vamos a utilizar -->
+@model PracticaBrive.Models.Compra
+
+@{
+    ViewData["Title"] = "Crear Nueva Compra";
+}
+
+<h1 class="text-center">COMPRAS</h1>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card border">
+            <div class="card-header">
+                <h3><strong>Crear un nueva compra</strong></h3>
+            </div>
+            <div class="card-body">
+               <form asp-action="CrearCompra">
+                   <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                   <div class="form-group">
+                       <label asp-for="Nombre" class="control-label"></label>
+                       <input asp-for="Nombre" class="form-control" placeholder="Ingrese el nombre del cliente" />
+                       <span asp-validation-for="Nombre" class="text-danger"></span>
+                   </div>
+                   <div class="form-group">
+                       <label asp-for="FechaDeCompra" class="control-label"></label>
+                       <input asp-for="FechaDeCompra" class="form-control" placeholder="Ingrese la fecha de la compra" />
+                       <span asp-validation-for="FechaDeCompra" class="text-danger"></span>
+                   </div>
+                   <div class="form-group">
+                       <label asp-for="idProducto" class="control-label"></label>
+                       <input asp-for="idProducto" class="form-control" placeholder="Ingrese el id del producto" />
+                       <span asp-validation-for="idProducto" class="text-danger"></span>
+                   </div>
+
+                   <div class="form-group mt-3">
+                       <button type="submit" class="btn btn-success"><i class="bi bi-person-circle"></i> Crear Compra</button>
+                   </div>
+               </form>
+            </div>
+        </div>
+    </div>
+</div>
